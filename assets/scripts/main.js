@@ -25,7 +25,7 @@ function getRecipesFromStorage() {
 	// A9. TODO - Complete the functionality as described in this function
 	//           header. It is possible in only a single line, but should
 	//           be no more than a few lines.
-	if (localStorage.getItem('recipes') != ""){
+	if (localStorage.getItem('recipes') != "" && localStorage.getItem('recipes') != null){
 		return JSON.parse(localStorage.getItem('recipes'));
 	}
 	return [];
@@ -76,10 +76,12 @@ function initFormHandler() {
 	// B3. TODO - Add an event listener for the 'submit' event, which fires when the
 	//            submit button is clicked
 	form.addEventListener('submit', (event) => {
+		event.preventDefault();
+
 
 		// Steps B4-B9 will occur inside the event listener from step B3
 		// B4. TODO - Create a new FormData object from the <form> element reference above
-			let formData = new FormData(form);
+		let formData = new FormData(form);
 
 		// B5. TODO - Create an empty object (we'll refer to this object as recipeObject to
 		//            make this easier to read), and then extract the keys and corresponding
@@ -113,7 +115,7 @@ function initFormHandler() {
 
 		// Steps B12 & B13 will occur inside the event listener from step B11
 		// B12. TODO - Clear the local storage
-		localStorage.clear()
+		localStorage.clear();
 
 		// B13. TODO - Delete the contents of <main>
 		document.querySelector('main').innerHTML = '';
