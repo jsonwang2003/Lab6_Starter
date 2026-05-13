@@ -96,7 +96,7 @@ function initFormHandler() {
 		recipeCard.data = recipeObject;
 
 		// B8. TODO - Append this new <recipe-card> to <main>
-		document.querySelector('main').appendChild(recipeCard)
+		document.querySelector('main').appendChild(recipeCard);
 
 		// B9. TODO - Get the recipes array from localStorage, add this new recipe to it, and
 		//            then save the recipes array back to localStorage
